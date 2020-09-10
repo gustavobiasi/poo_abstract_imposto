@@ -27,21 +27,13 @@ public class PessoaFisica extends Pessoa {
 		double calcImposto = 0.0;
 
 		if (getRendaAnual() > 20000.0) {
-
 			calcImposto = getRendaAnual() * 0.25;
-
-			if (gastoSaude > 0.0) {
-				calcImposto -= gastoSaude * 0.5;
-			}
-
 		} else {
-
 			calcImposto = getRendaAnual() * 0.15;
-
-			if (gastoSaude > 0.0) {
-				calcImposto -= gastoSaude * 0.5;
-			}
-
+		}
+		
+		if (getGastoSaude() > 0.0) {
+			calcImposto -= getGastoSaude() * 0.5;
 		}
 
 		return calcImposto;
